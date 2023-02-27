@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      html,
+      body {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="balloon" id="balloon"></div>
+
+    <script>
+      const balloon = document.getElementById("balloon");
+      let colorIndex = 0;
+      const colors = ["red", "green", "blue"];
+
+      balloon.addEventListener("click", function () {
+        colorIndex = (colorIndex + 1) % colors.length;
+        balloon.style.backgroundColor = colors[colorIndex];
+        if (balloon.offsetWidth <= 420) {
+          balloon.style.width = parseInt(balloon.offsetWidth) + 10 + "px";
+          balloon.style.height = parseInt(balloon.offsetHeight) + 10 + "px";
+        } else {
+          balloon.style.width = 205 + "px";
+          balloon.style.height = 205 + "px";
+        }
+      });
+
+      balloon.addEventListener("mouseover", function () {
+        balloon.style.width = parseInt(balloon.offsetWidth) + 5 + "px";
+        balloon.style.height = parseInt(balloon.offsetHeight) + 5 + "px";
+        colorIndex = (colorIndex + 1) % colors.length;
+        balloon.style.backgroundColor = colors[colorIndex];
+      });
+
+      balloon.addEventListener("mouseleave", function () {
+        balloon.style.width = parseInt(balloon.offsetWidth) - 5 + "px";
+        balloon.style.height = parseInt(balloon.offsetHeight) - 5 + "px";
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+        balloon.style.backgroundColor = colors[colorIndex];
+        console.log(balloon.style.width,balloon.style.backgroundColor);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="form">
+      <input type="text" id="num1" name="num1" required />
+      <select name="op" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input type="text" id="num2" name="num2" required /><br /><br />
+      <button type="submit" id="tryme">Try me!</button>
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      setInterval(function () {
+        alert("Pleaes, use me...");
+      }, 30000);
+      
+      $("document").ready(function () {
+        $("#form").submit(function (event) {
+          event.preventDefault();
+          let num1 = parseInt($("#num1").val());
+          let num2 = parseInt($("#num2").val());
+          let op = $("#op").val();
+          let result = 0;
+          if (num1 >= 0 && num2 >= 0) {
+            switch (op) {
+              case "+":
+                result = num1 + num2;
+                break;
+              case "-":
+                result = num1 - num2;
+                break;
+              case "*":
+                result = num1 * num2;
+                break;
+              case "/":
+                if (num2 == 0) {
+                  alert("It's over 9000!");
+                }
+                result = num1 / num2;
+                break;
+              case "%":
+                if (num2 == 0) {
+                  alert("It's over 9000!");
+                }
+                result = num1 % num2;
+                break;
+            }
+            if (isNaN(result) || result == Infinity) {
+              console.log(result);
+            } else {
+              alert(result);
+              console.log(result);
+            }
+          } else if (num1 < 0 || num2 < 0 || isNaN(num1) || isNaN(num2)) {
+            alert("Error :(");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

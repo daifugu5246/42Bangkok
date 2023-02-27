@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+html,body{
+    width: 100%;
+}
+#main{
+    width: 100%;
+}
+#brand{
+    color: aliceblue;
+    font-size: 25px;
+}
+#part1{
+    background-color: white;
+    padding-top: 64px;
+}
+#profile{
+   width: 37%;
+   animation-duration: 1s;
+}
+ul{
+    font-size: 20px;
+}
+#name{
+    letter-spacing: 3px;
+    font-size: 4vw;
+    margin: 10px;
+    animation-duration: 1s;
+}
+#job{
+    letter-spacing: 3px;
+    font-size: 3.5vw;
+    margin: 10px;
+    animation-duration: 1s;
+    color: darkgray;
+}
+#part2{
+    background-color: whitesmoke;
+    height: fit-content;
+    padding-top: 64px;
+}
+#part2 *{
+    animation-duration: 1s;
+}
+#part3 a{
+    text-decoration: none;
+    color:black
+}
+#part3 div{
+    width: 35px !important;
+    height: 35px !important;
+    background-color: darkgray;
+    border-radius: 50%;
+    margin: 5px;
+}
+#part3 div:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#exp div{
+    animation-duration: 1s;
+}
+nav .navbar-nav li a{
+    color: white !important;
+    font-size: 20px;
+}
+nav .navbar-nav li a:hover{
+    color: darkgrey !important;
+}
+@media screen and (max-width: 768px) {
+    #profile{
+        width: 60%;
+    }
+    #brand{
+        font-size: 23px;
+    }
+    nav .navbar-nav li a{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    #profile{
+        width: 80%;
+    }
+    #brand{
+        font-size: 23px;
+    }
+    nav .navbar-nav li a{
+        font-size: 15px;
+    }
+}
